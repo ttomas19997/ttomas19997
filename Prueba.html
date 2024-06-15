@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTw</title>
+    <link rel="icon" type="image/x-icon" href="Images/favicon.svg">
+</head>
+<body>
+    <h1>Hola Mundo</h1>
+    <br>
+    <h2>Trying form</h2>
+    <form>
+        <input type="radio" id="try1" name="trying" value="1">
+        <label for="try1">Opcion 1</label>
+        <br>
+        <input type="radio" id="try2" name="trying" value="2">
+        <label for="try2">Opcion 2</label>
+        <br>
+        <input type="radio" id="try3" name="trying" value="3">
+        <label for="try3">Opcion 3</label>
+    </form>
+    <br>
+    <h2>Next form try</h2>
+    <form action="/action_page.php" target="_blank">
+        <label for="fname">First name</label><br>
+        <input type="text" id="fname">
+        <br>
+
+        <label for="sname">Second name</label><br>
+        <input type="text" id="sname">
+        <br><br>
+
+        <label for="cars">Choose a car</label>
+        <select id="cars" name="cars">
+            <option value="1">First option</option>
+            <option value="2" selected>Second option</option>
+            <option value="3">Third Option</option>
+        </select><br>   
+
+        <br><input type="submit" value="Enviar">
+    </form>
+
+    <br><hr><br>
+
+    <p id="Changer">Este texto puede cambiar si le das al boton</p>
+    <input type="button" value="El boton" onclick="textChanger()">
+    <input type="button" value="+5px" onclick="sizeChanger()">
+
+    <script>
+        let num = 0;
+        function textChanger()
+        {
+            if (num == 0){
+                document.getElementById("Changer").innerHTML = "Cambiado!";
+                num++;
+            } else {
+                document.getElementById("Changer").innerHTML = "Este texto puede cambiar si le das al boton"
+                num--;
+            }
+            
+        }
+        let px = 20;
+        function sizeChanger()
+        {
+            let pxString;
+            if (px <= 55) {
+                pxString = px + "px";
+                document.getElementById("Changer").style.fontSize = pxString;
+                px = px + 5;
+            } else {
+                px = 20;
+                document.getElementById("Changer").style.fontSize = "20px";
+            }
+        }
+    </script>
+
+</body>
+</html>
